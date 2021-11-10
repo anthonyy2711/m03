@@ -18,34 +18,44 @@ public class LetraDniEnFunciones {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int dni;
-        
-        System.out.println("Introduce el DNI: ");
-        dni= sc.nextInt();
-        char letraDni=devuelveLetra(dni);
-        System.out.println("Para el DNI: "+dni+"el NIF es: "+letraDni);
-        
-        
+        System.out.println("Introduce el DNIasdasdasdasddasdaasdasdasdsadadsaddasdasasd: ");
+        dni = sc.nextInt();
+        char letraDni = devuelveLetra(dni);
+        System.out.println("Para el DNI: " + dni + " el NIF es: " + letraDni);
     }
-    public static char devuelveLetra(int dni){
+
+    public static char devuelveLetra(int dni) {
         int residuo;
-        
-        residuo=dni%23;
-        char letra=0;
-        if(residuo==0){
-           letra='T'; 
-        }else if(residuo==1){
-           letra='R';
-        }else if(residuo==2){
-           letra='W';
-        } else if(residuo==6){
-            letra='Y';
+        residuo = dni % 23;
+        char letra = 0;
+        switch (residuo) {
+            case 0:
+                letra = 'T';
+                break;
+            case 1:
+                letra = 'R';
+                break;
+            case 2:
+                letra = 'W';
+                break;
+            case 3:
+                letra = 'A';
+                break;
+            case 4:
+                letra = 'G';
+                break;
+            case 5:
+                letra = 'M';
+                break;
+            case 6:
+                letra = 'Y';
+                break;
+            default:
+                letra ='*';
+                break;
         }
-        
         return letra;
-        
-        
-        
+
     }
-    
-    
+
 }
